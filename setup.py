@@ -25,21 +25,21 @@ ABOUT = load_about()
 
 
 setup(
-    name="tutor-indigo",
+    name="tutor-indigo-madrasa",
     version=ABOUT["__version__"],
-    url="https://github.com/overhangio/tutor-indigo",
+    url="https://github.com/madrasafree/tutor-indigo-madrasa",
     project_urls={
         "Documentation": "https://docs.tutor.edly.io/",
-        "Code": "https://github.com/overhangio/tutor-indigo",
-        "Issue tracker": "https://github.com/overhangio/tutor-indigo/issues",
+        "Code": "https://github.com/madrasafree/tutor-indigo-madrasa",
+        "Issue tracker": "https://github.com/madrasafree/tutor-indigo-madrasa/issues",
         "Community": "https://discuss.openedx.org",
     },
     license="AGPLv3",
     author="Edly",
     author_email="hello@edly.io",
-    maintainer="Edly",
-    maintainer_email="hina.khadim@arbisoft.com",
-    description="Indigo theme plugin for Tutor",
+    maintainer="Lawrence McDaniel",
+    maintainer_email="lpm0073@gmail.com",
+    description="Madrasa Indigo theme plugin for Tutor",
     long_description=load_readme(),
     long_description_content_type="text/x-rst",
     packages=find_packages(exclude=["tests*"]),
