@@ -6,10 +6,10 @@
 #             and push to AWS ECR
 # -----------------------------------------------------------------------------
 
-AWS_ACCOUNT_ID="293205054626"
-AWS_REGION="ap-south-1"
+AWS_ACCOUNT_ID="081248911030"
+AWS_REGION="il-central-1"
 TUTOR_VERSION="18.2.2"
-OPENEDX_VERSION="18.0.0"
+OPENEDX_VERSION="v18"
 OPENEDX_RELEASE="open-release/redwood.master"
 
 # stop any running docker containers
@@ -54,7 +54,7 @@ if [ $? -ne 0 ]; then
 fi
 
 tutor config save --set MFE_DOCKER_IMAGE=${MFE_DOCKER_IMAGE}
-docker buildx create --use --name=max1cpu --driver=docker-container --config=./buildkit.toml
+docker buildx create --use --name=max1cpu --driver=docker-container --config=/home/ubuntu/buildkit.toml
 tutor images build mfe
 
 # push and tag container
