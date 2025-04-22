@@ -18,10 +18,16 @@ docker stop $(docker ps -q)
 # sign in to AWS ECR
 aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com
 
-# ensure that this tutor plugin is installed and enabled.
+# remove everything
+# be mindful that one of the most common mistakes is to leave some unrelated
+# tutor pypi package who's version is inconsistent with whatever we're trying to install here.
+# in this case, you'll likely end up with whichever version is latest on pypi, which often is not
+# the same as the version of tutor you're using here.
 pip uninstall -y tutor tutor-indigo-madrasa tutor-mfe tutor-android tutor-cairn tutor-credentials tutor-discovery tutor-ecommerce tutor-forum tutor-indigo tutor-jupyter tutor-minio tutor-notes tutor-webui tutor-xqueue tutor-contrib-madrasa  tutor-contrib-madrasa-hebrew tutor-contrib-madrasa-s3 
 
 
+# ensure that we're running the correct version of tutor and that we're using
+# the most recent codebase for the indigo plugin.
 pip install tutor==${TUTOR_VERSION}
 pip install tutor-mfe==18.1.0
 pip install git+https://github.com/madrasafree/tutor-indigo-madrasa@${OPENEDX_RELEASE}
