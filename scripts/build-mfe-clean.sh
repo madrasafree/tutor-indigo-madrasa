@@ -3,6 +3,9 @@
 # date:       2025-Apr
 #
 # Usage:      manually build tutor MFE container and push to AWS ECR
+#             This is a reference script that decribes the base case 
+#             for building the MFE container. It does not include any
+#             customizations or plugins.
 # -----------------------------------------------------------------------------
 
 AWS_ACCOUNT_ID="081248911030"

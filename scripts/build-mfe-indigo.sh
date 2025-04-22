@@ -2,8 +2,8 @@
 # written by: Lawrence McDaniel https://lawrencemcdaniel.com
 # date:       2025-Apr
 #
-# Usage:      manually build tutor MFE container with Indigo theme and 
-#             customized header and push to AWS ECR
+# Usage:      manually build tutor MFE container with customized Indigo theme
+#             and push to AWS ECR
 # -----------------------------------------------------------------------------
 
 AWS_ACCOUNT_ID="293205054626"
@@ -28,7 +28,7 @@ pip install git+https://github.com/madrasafree/tutor-indigo-madrasa@${OPENEDX_RE
 
 pip list
 tutor plugins enable mfe
-tutor plugins enable indigo-ttb
+tutor plugins enable indigo
 tutor plugins list
 
 # set environment variables
